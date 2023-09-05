@@ -1,2 +1,10 @@
+pmTechExAutomation/Resources/JsonPathsLibrary.class
+pmTechExAutomation/Resources/LocatorLibrary$LogInPageVariables.class
+pmTechExAutomation/Resources/LocatorLibrary$ErrorType.class
+pmTechExAutomation/Resources/LocatorLibrary$OtherPageVariables.class
+pmTechExAutomation/Resources/LocatorLibrary$Step.class
+pmTechExAutomation/Resources/LocatorLibrary$StepStatus.class
+pmTechExAutomation/Resources/LocatorLibrary$AccountActivationVariables.class
+pmTechExAutomation/Methods/MethodsLibrary.class
 pmTechExAutomation/Resources/LocatorLibrary.class
 pmTechExAutomation/TestCases/AccountActivationRegression.class

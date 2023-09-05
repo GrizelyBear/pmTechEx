@@ -9,10 +9,38 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">PayMongo Technical Exam Suite</th></tr>
-<tr><td><a href="#t0">Account Activation</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">68</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Account Activation - Individual Business Type</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">128,436</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">PayMongo Technical Exam Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Account Activation &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">pmTechExAutomation.TestCases.AccountActivationRegression</td><td><a href="#m0">sampleTest</a></td><td rowspan="1">1693796424780</td><td rowspan="1">11</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">PayMongo Technical Exam Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Account Activation - Individual Business Type &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">pmTechExAutomation.TestCases.AccountActivationRegression</td><td><a href="#m0">verifyAccountActivationSecondStepErrorHandling</a></td><td rowspan="1">1693883558687</td><td rowspan="1">36702</td></tr><tr><th colspan="4">Account Activation - Individual Business Type &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">pmTechExAutomation.TestCases.AccountActivationRegression</td><td><a href="#m1">verifyAccountActivationFirstStep</a></td><td rowspan="1">1693883494656</td><td rowspan="1">47387</td></tr><tr class="passedeven"><td><a href="#m2">verifyAccountActivationSecondStep</a></td><td rowspan="1">1693883542051</td><td rowspan="1">16469</td></tr><tr class="passedeven"><td><a href="#m3">verifyAccountActivationSecondStepInitialValues</a></td><td rowspan="1">1693883558523</td><td rowspan="1">160</td></tr><tr class="passedeven"><td><a href="#m4">verifyUserLoginIn</a></td><td rowspan="1">1693883477046</td><td rowspan="1">17549</td></tr></tbody>
 </table>
-<h2>Account Activation</h2><h3 id="m0">pmTechExAutomation.TestCases.AccountActivationRegression#sampleTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Account Activation - Individual Business Type</h2><h3 id="m0">pmTechExAutomation.TestCases.AccountActivationRegression#verifyAccountActivationSecondStepErrorHandling</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[contains(text(), &apos;The value for business handle cannot be the default value.&apos;)]&quot;}
+  (Session info: chrome=116.0.5845.140)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.4&apos;, java.version: &apos;17.0.3.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1c512e2342b507d9bda684596fa84b46, findElement {using=xpath, value=//p[contains(text(), &apos;The value for business handle cannot be the default value.&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/8f/wxgc9x1906q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50855}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:50855/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1c512e2342b507d9bda684596fa84b46
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at pmTechExAutomation.Methods.MethodsLibrary.waitUntilElementVisible(MethodsLibrary.java:89)
+	at pmTechExAutomation.TestCases.AccountActivationRegression.verifySubmitOfDefaultBusinessHandleSecondStepForm(AccountActivationRegression.java:224)
+	at pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationSecondStepErrorHandling(AccountActivationRegression.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 36 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">pmTechExAutomation.TestCases.AccountActivationRegression#verifyAccountActivationFirstStep</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">pmTechExAutomation.TestCases.AccountActivationRegression#verifyAccountActivationSecondStep</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">pmTechExAutomation.TestCases.AccountActivationRegression#verifyAccountActivationSecondStepInitialValues</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">pmTechExAutomation.TestCases.AccountActivationRegression#verifyUserLoginIn</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

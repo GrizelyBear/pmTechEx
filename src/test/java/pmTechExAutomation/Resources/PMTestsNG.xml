@@ -2,9 +2,12 @@
 
 <suite name="PayMongo Technical Exam Suite" verbose="2" parallel="false">
 
-  <test name="Account Activation">
+  <test name="Account Activation - Individual Business Type">
     <classes>
       <class name="pmTechExAutomation.TestCases.AccountActivationRegression"/>
+      <parameter name="emailAddress" value="grizelybearyl+test2@gmail.com"/>
+      <parameter name="password" value="test_P@ssw0rd!"/>
+      <parameter name="businessType" value="Individual"/>
     </classes>
   </test>
 

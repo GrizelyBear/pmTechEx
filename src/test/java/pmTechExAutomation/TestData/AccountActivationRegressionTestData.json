@@ -1,0 +1,33 @@
+{
+    "testURL": "https://dashboard.uat.paymongo.dev/login",
+
+    "signUpInformation": {
+        "businessName": "Sample Biz Name",
+        "firstName": "Grizel",
+        "lastName": "Olmilla"
+    },
+
+    "validGeneralInformationForm": {
+        "businessStoreName": "Grizel's Store",
+        "customerServiceNum": "+639952161546",
+
+        "businessAddress": {
+            "addressLine1": "Sample Address Line 1",
+            "addressLine2": "Sample Address Line 2",
+            "addressCity": "Manila City",
+            "addressState": "Metro Manila",
+            "addressZip": "1111"
+        },
+
+        "hasPhysicalStore": "No",
+        "businessSize": "Less than 10 employees",
+        "businessIndustry": "Cash",
+        "productDesc": "This is a sample business description.",
+
+        "businessLinks": {
+            "businessLink1": "facebook.com/grizel"
+        },
+
+        "businessHandle": "grizel-business"
+    }
+}
