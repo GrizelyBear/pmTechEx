@@ -21,7 +21,7 @@ public class JsonPathsLibrary {
     public String validGenInfoBusinessHandlePath = validGenInfoPath + ".businessHandle";
 
     // Business Address
-    public String validGenInfoBusinessAddressPath = validGenInfoBusinessNamePath + ".businessAddress"; 
+    public String validGenInfoBusinessAddressPath = validGenInfoPath + ".businessAddress"; 
     public String validGenInfoAddressLine1Path = validGenInfoBusinessAddressPath + ".addressLine1";
     public String validGenInfoAddressLine2Path = validGenInfoBusinessAddressPath + ".addressLine2";
     public String validGenInfoCityPath = validGenInfoBusinessAddressPath + ".addressCity";
@@ -31,4 +31,27 @@ public class JsonPathsLibrary {
     public String returnValidGenInfoSpecificBusinessLinkPath(String linkNum) {
         return validGenInfoBusinessLinksPath + ".businessLink" + linkNum;
     }
+
+    /* JSON Paths relating to the Business Information - INDIVIDUAL form. */
+    public String validIndivBizInfoPath = "$.validIndividualBusinessInformationForm";
+    public String validIndivBizInfoFirstNamePath = validIndivBizInfoPath + ".firstName";
+    public String validIndivBizInfoLastNamePath = validIndivBizInfoPath + ".lastName";
+    public String validIndivBizInfoBirthDatePath = validIndivBizInfoPath + ".birthDate";
+    public String validIndivBizInfoNationalityPath = validIndivBizInfoPath + ".nationality";
+    public String validIndivBizInfoBirthCityPath = validIndivBizInfoPath + ".cityOfBirth";
+    public String validIndivBizInfoBirthCountryPath = validIndivBizInfoPath + ".countryOfBirth";
+    public String validIndivBizInfoNatureOfWorkPath = validIndivBizInfoPath + ".natureOfWork";
+    public String validIndivBizInfoSourceOfFundsPath = validIndivBizInfoPath + ".sourceOfFunds";
+    public String validIndivBizInfoBusinessAgePath = validIndivBizInfoPath + ".businessAge";
+    public String validIndivBizInfoBankPath = validIndivBizInfoPath + ".bank";
+    public String validIndivBizInfoBankAcctNamePath = validIndivBizInfoPath + ".bankAcctName";
+    public String validIndivBizInfoBankAcctNumPath = validIndivBizInfoPath + ".bankAcctNum";
+
+    // Business Address
+    public String validIndivBizInfoAddressPath = validIndivBizInfoPath + ".businessAddress"; 
+    public String validIndivBizInfoAddressLine1Path = validIndivBizInfoAddressPath + ".addressLine1";
+    public String validIndivBizInfoAddressLine2Path = validIndivBizInfoAddressPath + ".addressLine2";
+    public String validIndivBizInfoCityPath = validIndivBizInfoAddressPath + ".addressCity";
+    public String validIndivBizInfoStatePath = validIndivBizInfoAddressPath + ".addressState";
+    public String validIndivBizInfoZIPCodePath = validIndivBizInfoAddressPath + ".addressZip";
 }

@@ -29,5 +29,29 @@
         },
 
         "businessHandle": "grizel-business"
+    },
+
+    "validIndividualBusinessInformationForm": {
+        "firstName": "Grizel",
+        "lastName": "Olmilla",
+        "birthDate": "01-20-1997",
+        "nationality": "Filipino",
+        "cityOfBirth": "Manila City",
+        "countryOfBirth": "Philippines",
+
+        "businessAddress": {
+            "addressLine1": "Sample Address Line 1",
+            "addressLine2": "Sample Address Line 2",
+            "addressCity": "Manila City",
+            "addressState": "Metro Manila",
+            "addressZip": "1111"
+        },
+
+        "natureOfWork": "Student",
+        "sourceOfFunds": "Allowance",
+        "businessAge": "Less than 1 year",
+        "bank": "BANK OF THE PHILIPPINE ISLANDS (BPI)",
+        "bankAcctName": "Grizel Olmilla",
+        "bankAcctNum": "123456789"
     }
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-05T11:11:06 PST" name="PayMongo Technical Exam Suite" finished-at="2023-09-05T11:13:15 PST" duration-ms="128436">
+  <suite started-at="2023-09-05T18:29:27 PST" name="PayMongo Technical Exam Suite" finished-at="2023-09-05T18:30:41 PST" duration-ms="73817">
     <groups>
     </groups>
-    <test started-at="2023-09-05T11:11:06 PST" name="Account Activation - Individual Business Type" finished-at="2023-09-05T11:13:15 PST" duration-ms="128436">
+    <test started-at="2023-09-05T18:29:27 PST" name="Account Activation - Individual Business Type" finished-at="2023-09-05T18:30:41 PST" duration-ms="73817">
       <class name="pmTechExAutomation.TestCases.AccountActivationRegression">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@14dda234]" started-at="2023-09-05T11:11:07 PST" name="setup" finished-at="2023-09-05T11:11:17 PST" duration-ms="10009" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c8504fd]" started-at="2023-09-05T18:29:28 PST" name="setup" finished-at="2023-09-05T18:29:39 PST" duration-ms="11192" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -28,103 +28,43 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyUserLoginIn()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@14dda234]" started-at="2023-09-05T11:11:17 PST" name="verifyUserLoginIn" finished-at="2023-09-05T11:11:34 PST" duration-ms="17549" status="PASS">
+        <test-method signature="verifyUserLoginIn()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c8504fd]" started-at="2023-09-05T18:29:39 PST" name="verifyUserLoginIn" finished-at="2023-09-05T18:29:56 PST" duration-ms="17630" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserLoginIn -->
-        <test-method signature="verifyAccountActivationFirstStep()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@14dda234]" started-at="2023-09-05T11:11:34 PST" name="verifyAccountActivationFirstStep" finished-at="2023-09-05T11:12:22 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyUserLoginIn" duration-ms="47387" status="PASS">
+        <test-method signature="verifyAccountActivationFirstStep()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c8504fd]" started-at="2023-09-05T18:29:56 PST" name="verifyAccountActivationFirstStep" finished-at="2023-09-05T18:29:56 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyUserLoginIn" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountActivationFirstStep -->
-        <test-method signature="verifyAccountActivationSecondStep()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@14dda234]" started-at="2023-09-05T11:12:22 PST" name="verifyAccountActivationSecondStep" finished-at="2023-09-05T11:12:38 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationFirstStep" duration-ms="16469" status="PASS">
+        <test-method signature="verifyAccountActivationSecondStep()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c8504fd]" started-at="2023-09-05T18:29:56 PST" name="verifyAccountActivationSecondStep" finished-at="2023-09-05T18:29:56 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationFirstStep" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountActivationSecondStep -->
-        <test-method signature="verifyAccountActivationSecondStepInitialValues()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@14dda234]" started-at="2023-09-05T11:12:38 PST" name="verifyAccountActivationSecondStepInitialValues" finished-at="2023-09-05T11:12:38 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationSecondStep" duration-ms="160" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAccountActivationSecondStepInitialValues -->
-        <test-method signature="verifyAccountActivationSecondStepErrorHandling()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@14dda234]" started-at="2023-09-05T11:12:38 PST" name="verifyAccountActivationSecondStepErrorHandling" finished-at="2023-09-05T11:13:15 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationSecondStepInitialValues" duration-ms="36702" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//p[contains(text(), 'The value for business handle cannot be the default value.')]"}
-  (Session info: chrome=116.0.5845.140)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.4', java.version: '17.0.3.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1c512e2342b507d9bda684596fa84b46, findElement {using=xpath, value=//p[contains(text(), 'The value for business handle cannot be the default value.')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/8f/wxgc9x1906q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50855}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:50855/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1c512e2342b507d9bda684596fa84b46]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//p[contains(text(), 'The value for business handle cannot be the default value.')]"}
-  (Session info: chrome=116.0.5845.140)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.9.0', revision: 'd7057100a6'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.4', java.version: '17.0.3.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1c512e2342b507d9bda684596fa84b46, findElement {using=xpath, value=//p[contains(text(), 'The value for business handle cannot be the default value.')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: /var/folders/8f/wxgc9x1906q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50855}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:50855/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1c512e2342b507d9bda684596fa84b46
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at pmTechExAutomation.Methods.MethodsLibrary.waitUntilElementVisible(MethodsLibrary.java:89)
-at pmTechExAutomation.TestCases.AccountActivationRegression.verifySubmitOfDefaultBusinessHandleSecondStepForm(AccountActivationRegression.java:224)
-at pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationSecondStepErrorHandling(AccountActivationRegression.java:134)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:377)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:138)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:465)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:451)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="verifyAccountActivationSecondStepErrorHandling()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c8504fd]" started-at="2023-09-05T18:29:56 PST" name="verifyAccountActivationSecondStepErrorHandling" finished-at="2023-09-05T18:29:56 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationSecondStep" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountActivationSecondStepErrorHandling -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@14dda234]" started-at="2023-09-05T11:13:15 PST" name="tearDown" finished-at="2023-09-05T11:13:15 PST" duration-ms="2" status="PASS">
+        <test-method signature="verifyAccountActivationSecondStepSuccessfulSubmit()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c8504fd]" started-at="2023-09-05T18:29:56 PST" name="verifyAccountActivationSecondStepSuccessfulSubmit" finished-at="2023-09-05T18:29:56 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationSecondStepErrorHandling" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccountActivationSecondStepSuccessfulSubmit -->
+        <test-method signature="verifyAccountActivationThirdStepChooseBusinessType()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c8504fd]" started-at="2023-09-05T18:29:56 PST" name="verifyAccountActivationThirdStepChooseBusinessType" finished-at="2023-09-05T18:29:56 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationSecondStepSuccessfulSubmit" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccountActivationThirdStepChooseBusinessType -->
+        <test-method signature="verifyAccountActivationThirdStepBusinessFormInitialValues()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c8504fd]" started-at="2023-09-05T18:29:56 PST" name="verifyAccountActivationThirdStepBusinessFormInitialValues" finished-at="2023-09-05T18:30:12 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationThirdStepChooseBusinessType" duration-ms="16002" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccountActivationThirdStepBusinessFormInitialValues -->
+        <test-method signature="verifyAccountActivationThirdStepBusinessFormErrorHandling()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c8504fd]" started-at="2023-09-05T18:30:12 PST" name="verifyAccountActivationThirdStepBusinessFormErrorHandling" finished-at="2023-09-05T18:30:29 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationThirdStepBusinessFormInitialValues" duration-ms="16473" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccountActivationThirdStepBusinessFormErrorHandling -->
+        <test-method signature="verifyAccountActivationThirdStepSuccessfulSubmit()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c8504fd]" started-at="2023-09-05T18:30:29 PST" name="verifyAccountActivationThirdStepSuccessfulSubmit" finished-at="2023-09-05T18:30:41 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationThirdStepBusinessFormErrorHandling" duration-ms="12397" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAccountActivationThirdStepSuccessfulSubmit -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c8504fd]" started-at="2023-09-05T18:30:41 PST" name="tearDown" finished-at="2023-09-05T18:30:41 PST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
