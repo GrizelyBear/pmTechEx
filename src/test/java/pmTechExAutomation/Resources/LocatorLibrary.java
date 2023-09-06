@@ -78,7 +78,10 @@ public class LocatorLibrary {
         MISSING_DATE_OF_INCORPORATION ("The value for date of incorporation cannot be blank."),
         MISSING_BANK ("The value for bank id cannot be blank."),
         MISSING_BANK_ACCOUNT_NAME ("The value for bank account name cannot be blank."),
-        MISSING_BANK_ACCOUNT_NUM ("The value for bank account number cannot be blank.");
+        MISSING_BANK_ACCOUNT_NUM ("The value for bank account number cannot be blank."),
+
+        /* Signature */
+        MISSING_SIGNATURE ("Signature is invalid.");
 
         private final String errorMsg;
 
@@ -160,9 +163,22 @@ public class LocatorLibrary {
         public String step3RegionSelectorXpath = "//div[text()='Select region']";
         public String step3NatureOfWorkSelectorXpath = "//div[contains(@class, 'select-nature-of-work')]";
         public String step3SourceOfFundsSelectorXpath = "//div[contains(@class, 'select-source-of-funds')]";
-        public String step3BusinessAgeSelectorXpath = "//div[contains(@class, 'select business-age')]";
+        public String step3IndivBusinessAgeSelectorXpath = "//div[contains(@class, 'select business-age')]";
+        public String step3SolePropBusinessAgeSelectorXpath = "//div[contains(@class, 'business')]"
+            + "//div[contains(@class, 'select')][text()='Select']";
         public String step3DateOfIncorporationXpath = "//span[@id='date_of_incorporation']//input";
         public String step3BankSelectorXpath = "//div[contains(@class, 'select bank')]";
+        public String step3DateInputXpath = "//input[contains(@class, 'ant-calendar-input')]";
+
+        /* Step 4 */
+        public String step4HeaderXpath = "//h1[text()='Statement of Acceptance']";
+        public String step4SignatureCanvasXpath = "//canvas";
+        public String step4TermsOfUseLinkXpath = "(//a[text()='Terms of Use'])[1]";
+        public String step4PrivacyPolicyLinkXpath = "(//a[text()='Privacy Policy'])[1]";
+        public String step4PayMongoWebsiteLinkXpath = "(//a[text()='PayMongo website'])[1]";
+
+        /* Activation Finish */
+        public String goToDashboardBtnXpath = "//span[text()='Start exploring the Dashboard']";
 
         /* Functions */
         public String returnStepRoadmapStatusXpath(Step chosenStep) {
@@ -198,12 +214,16 @@ public class LocatorLibrary {
             return "//p[contains(text(), '" + expectedError.returnErrorMsg() + "')]";
         }
 
-        public String returnBankFieldErrorMessageXpath(ErrorType expectedError) {
+        public String returnSpanFieldErrorMessageXpath(ErrorType expectedError) {
             return "//span[contains(text(), '" + expectedError.returnErrorMsg() + "')]";
         }
 
         public String returnBankDropdownChoiceButtonXpath(String bankOptionName) {
             return "//div[text()='" + bankOptionName + "']";
+        }
+
+        public String returnUploadedFileXpath(String fileName) {
+            return "//div[contains(@class, 'file-item-name')][text()='" + fileName + "']";
         }
     }
 
@@ -211,7 +231,9 @@ public class LocatorLibrary {
     public class OtherPageVariables {
         public String requiredDocumentsPageHeaderXpath =
             "//header[text()='What are the documents required to activate my account?']";
-        public String restrictedBusinessesPageHeaderXpath =
-            "//h2[text()='Restricted Businesses']";
+        public String restrictedBusinessesPageHeaderXpath = "//h2[text()='Restricted Businesses']";
+        public String termsOfUseHeaderXpath = "//h2[text()='Terms of Use']";
+        public String privacyPolicyHeaderXpath = "//h2[text()='Privacy Policy']";
+        public String payMongoWebsiteHeaderXpath = "//strong[contains(text(), 'The payment gateway')]";
     }
 }

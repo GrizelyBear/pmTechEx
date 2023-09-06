@@ -42,7 +42,7 @@ public class MethodsLibrary {
         try {
 
             /* If user does not provide any file path, get environment vars. */
-            if(fileDir.isEmpty() || fileDir.equals("")){
+            if (fileDir.isEmpty() || fileDir.equals("")){
                 fileDir = System.getProperty("user.dir");
             }
 
@@ -54,6 +54,15 @@ public class MethodsLibrary {
         }
 
         return jsonFileReader;
+    }
+
+    /* Method to open the parser to read the Test Data JSON file */
+    public String returnFileLocation(String fileName, String fileDir) {
+        if (fileDir.isEmpty() || fileDir.equals("")) {
+            fileDir = System.getProperty("user.dir");
+        }
+
+        return fileDir + "/src/test/java/pmTechExAutomation/TestData/" + fileName;
     }
 
     /*

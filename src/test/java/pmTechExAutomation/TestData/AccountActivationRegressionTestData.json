@@ -34,7 +34,7 @@
     "validIndividualBusinessInformationForm": {
         "firstName": "Grizel",
         "lastName": "Olmilla",
-        "birthDate": "01-20-1997",
+        "birthDate": "1997-01-20",
         "nationality": "Filipino",
         "cityOfBirth": "Manila City",
         "countryOfBirth": "Philippines",
@@ -50,6 +50,69 @@
         "natureOfWork": "Student",
         "sourceOfFunds": "Allowance",
         "businessAge": "Less than 1 year",
+        "bank": "BANK OF THE PHILIPPINE ISLANDS (BPI)",
+        "bankAcctName": "Grizel Olmilla",
+        "bankAcctNum": "123456789"
+    },
+
+    "validSoleProprietorshipBusinessInformationForm": {
+        "firstName": "Grizel",
+        "lastName": "Olmilla",
+        "birthDate": "1997-01-20",
+        "nationality": "Filipino",
+        "cityOfBirth": "Manila City",
+        "countryOfBirth": "Philippines",
+
+        "businessAddress": {
+            "addressLine1": "Sample Address Line 1",
+            "addressLine2": "Sample Address Line 2",
+            "addressCity": "Manila City",
+            "addressState": "Metro Manila",
+            "addressZip": "1111"
+        },
+
+        "businessName": "Grizel's Business",
+        "businessAge": "Less than 1 year",
+        "bank": "BANK OF THE PHILIPPINE ISLANDS (BPI)",
+        "bankAcctName": "Grizel Olmilla",
+        "bankAcctNum": "123456789"
+    },
+
+    "validPartnershipBusinessInformationForm": {
+        "firstName": "Grizel",
+        "lastName": "Olmilla",
+        "birthDate": "1997-01-20",
+
+        "businessAddress": {
+            "addressLine1": "Sample Address Line 1",
+            "addressLine2": "Sample Address Line 2",
+            "addressCity": "Manila City",
+            "addressState": "Metro Manila",
+            "addressZip": "1111"
+        },
+
+        "businessName": "Grizel's Business",
+        "dateOfIncorporation": "2023-01-05",
+        "bank": "BANK OF THE PHILIPPINE ISLANDS (BPI)",
+        "bankAcctName": "Grizel Olmilla",
+        "bankAcctNum": "123456789"
+    },
+
+    "validCorporationBusinessInformationForm": {
+        "firstName": "Grizel",
+        "lastName": "Olmilla",
+        "birthDate": "1997-01-20",
+
+        "businessAddress": {
+            "addressLine1": "Sample Address Line 1",
+            "addressLine2": "Sample Address Line 2",
+            "addressCity": "Manila City",
+            "addressState": "Metro Manila",
+            "addressZip": "1111"
+        },
+
+        "businessName": "Grizel's Business",
+        "dateOfIncorporation": "2023-01-05",
         "bank": "BANK OF THE PHILIPPINE ISLANDS (BPI)",
         "bankAcctName": "Grizel Olmilla",
         "bankAcctNum": "123456789"
