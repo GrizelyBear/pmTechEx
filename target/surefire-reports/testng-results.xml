@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-06T18:41:14 PST" name="PayMongo Technical Exam Suite" finished-at="2023-09-06T18:46:44 PST" duration-ms="330577">
+  <suite started-at="2023-09-07T11:24:28 PST" name="PayMongo Technical Exam Suite" finished-at="2023-09-07T11:27:32 PST" duration-ms="184192">
     <groups>
     </groups>
-    <test started-at="2023-09-06T18:41:14 PST" name="Account Activation - Corporation Business Type" finished-at="2023-09-06T18:46:44 PST" duration-ms="330577">
+    <test started-at="2023-09-07T11:24:28 PST" name="Account Activation - Sole Proprietorship Business Type" finished-at="2023-09-07T11:27:32 PST" duration-ms="184192">
       <class name="pmTechExAutomation.TestCases.AccountActivationRegression">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:41:14 PST" name="setup" finished-at="2023-09-06T18:41:23 PST" duration-ms="9495" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:24:28 PST" name="setup" finished-at="2023-09-07T11:24:38 PST" duration-ms="9742" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[grizelybearyl+tester7@gmail.com]]>
+                <![CDATA[grizelybearyl+tester1@gmail.com]]>
               </value>
             </param>
             <param index="1">
@@ -21,66 +21,66 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[Corporation]]>
+                <![CDATA[Sole proprietorship]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyUserLogin()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:41:23 PST" name="verifyUserLogin" finished-at="2023-09-06T18:41:40 PST" duration-ms="16261" status="PASS">
+        <test-method signature="verifyUserLogin()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:24:38 PST" name="verifyUserLogin" finished-at="2023-09-07T11:24:54 PST" duration-ms="16207" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserLogin -->
-        <test-method signature="verifyAccountActivationFirstStep()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:41:40 PST" name="verifyAccountActivationFirstStep" finished-at="2023-09-06T18:42:25 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyUserLogin" duration-ms="45687" status="PASS">
+        <test-method signature="verifyAccountActivationFirstStep()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:24:54 PST" name="verifyAccountActivationFirstStep" finished-at="2023-09-07T11:25:33 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyUserLogin" duration-ms="38997" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountActivationFirstStep -->
-        <test-method signature="verifyAccountActivationSecondStep()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:42:25 PST" name="verifyAccountActivationSecondStep" finished-at="2023-09-06T18:42:42 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationFirstStep" duration-ms="16223" status="PASS">
+        <test-method signature="verifyAccountActivationSecondStep()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:25:33 PST" name="verifyAccountActivationSecondStep" finished-at="2023-09-07T11:25:34 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationFirstStep" duration-ms="1015" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountActivationSecondStep -->
-        <test-method signature="verifyAccountActivationSecondStepErrorHandling()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:42:42 PST" name="verifyAccountActivationSecondStepErrorHandling" finished-at="2023-09-06T18:43:18 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationSecondStep" duration-ms="35956" status="PASS">
+        <test-method signature="verifyAccountActivationSecondStepErrorHandling()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:25:34 PST" name="verifyAccountActivationSecondStepErrorHandling" finished-at="2023-09-07T11:25:45 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationSecondStep" duration-ms="10693" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountActivationSecondStepErrorHandling -->
-        <test-method signature="verifyAccountActivationSecondStepSuccessfulSubmit()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:43:18 PST" name="verifyAccountActivationSecondStepSuccessfulSubmit" finished-at="2023-09-06T18:43:42 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationSecondStepErrorHandling" duration-ms="24492" status="PASS">
+        <test-method signature="verifyAccountActivationSecondStepSuccessfulSubmit()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:25:45 PST" name="verifyAccountActivationSecondStepSuccessfulSubmit" finished-at="2023-09-07T11:25:53 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationSecondStepErrorHandling" duration-ms="7728" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountActivationSecondStepSuccessfulSubmit -->
-        <test-method signature="verifyAccountActivationThirdStepChooseBusinessType()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:43:42 PST" name="verifyAccountActivationThirdStepChooseBusinessType" finished-at="2023-09-06T18:43:43 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationSecondStepSuccessfulSubmit" duration-ms="704" status="PASS">
+        <test-method signature="verifyAccountActivationThirdStepChooseBusinessType()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:25:53 PST" name="verifyAccountActivationThirdStepChooseBusinessType" finished-at="2023-09-07T11:25:55 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationSecondStepSuccessfulSubmit" duration-ms="2220" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountActivationThirdStepChooseBusinessType -->
-        <test-method signature="verifyAccountActivationThirdStepBusinessFormInitialValues()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:43:43 PST" name="verifyAccountActivationThirdStepBusinessFormInitialValues" finished-at="2023-09-06T18:43:58 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationThirdStepChooseBusinessType" duration-ms="15226" status="PASS">
+        <test-method signature="verifyAccountActivationThirdStepBusinessFormInitialValues()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:25:55 PST" name="verifyAccountActivationThirdStepBusinessFormInitialValues" finished-at="2023-09-07T11:26:00 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationThirdStepChooseBusinessType" duration-ms="5033" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountActivationThirdStepBusinessFormInitialValues -->
-        <test-method signature="verifyAccountActivationThirdStepBusinessFormErrorHandling()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:43:58 PST" name="verifyAccountActivationThirdStepBusinessFormErrorHandling" finished-at="2023-09-06T18:44:17 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationThirdStepBusinessFormInitialValues" duration-ms="19400" status="PASS">
+        <test-method signature="verifyAccountActivationThirdStepBusinessFormErrorHandling()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:26:00 PST" name="verifyAccountActivationThirdStepBusinessFormErrorHandling" finished-at="2023-09-07T11:26:06 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationThirdStepBusinessFormInitialValues" duration-ms="6457" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountActivationThirdStepBusinessFormErrorHandling -->
-        <test-method signature="verifyAccountActivationThirdStepSuccessfulSubmit()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:44:17 PST" name="verifyAccountActivationThirdStepSuccessfulSubmit" finished-at="2023-09-06T18:45:06 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationThirdStepBusinessFormErrorHandling" duration-ms="48950" status="PASS">
+        <test-method signature="verifyAccountActivationThirdStepSuccessfulSubmit()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:26:06 PST" name="verifyAccountActivationThirdStepSuccessfulSubmit" finished-at="2023-09-07T11:26:18 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationThirdStepBusinessFormErrorHandling" duration-ms="11884" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccountActivationThirdStepSuccessfulSubmit -->
-        <test-method signature="verifyFourthStepStatementOfAcceptanceLinks()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:45:06 PST" name="verifyFourthStepStatementOfAcceptanceLinks" finished-at="2023-09-06T18:46:08 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationThirdStepSuccessfulSubmit" duration-ms="61929" status="PASS">
+        <test-method signature="verifyFourthStepStatementOfAcceptanceLinks()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:26:18 PST" name="verifyFourthStepStatementOfAcceptanceLinks" finished-at="2023-09-07T11:27:20 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyAccountActivationThirdStepSuccessfulSubmit" duration-ms="61835" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFourthStepStatementOfAcceptanceLinks -->
-        <test-method signature="verifyFourthStepStatementOfAcceptanceErrorHandling()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:46:08 PST" name="verifyFourthStepStatementOfAcceptanceErrorHandling" finished-at="2023-09-06T18:46:27 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyFourthStepStatementOfAcceptanceLinks" duration-ms="18718" status="PASS">
+        <test-method signature="verifyFourthStepStatementOfAcceptanceErrorHandling()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:27:20 PST" name="verifyFourthStepStatementOfAcceptanceErrorHandling" finished-at="2023-09-07T11:27:25 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyFourthStepStatementOfAcceptanceLinks" duration-ms="4893" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFourthStepStatementOfAcceptanceErrorHandling -->
-        <test-method signature="verifyFourthStepSubmitStatementOfAcceptance()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:46:27 PST" name="verifyFourthStepSubmitStatementOfAcceptance" finished-at="2023-09-06T18:46:44 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyFourthStepStatementOfAcceptanceErrorHandling" duration-ms="16936" status="PASS">
+        <test-method signature="verifyFourthStepSubmitStatementOfAcceptance()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:27:25 PST" name="verifyFourthStepSubmitStatementOfAcceptance" finished-at="2023-09-07T11:27:32 PST" depends-on-methods="pmTechExAutomation.TestCases.AccountActivationRegression.verifyFourthStepStatementOfAcceptanceErrorHandling" duration-ms="6957" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyFourthStepSubmitStatementOfAcceptance -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-06T18:46:44 PST" name="tearDown" finished-at="2023-09-06T18:46:44 PST" duration-ms="426" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:pmTechExAutomation.TestCases.AccountActivationRegression@5c530d1e]" started-at="2023-09-07T11:27:32 PST" name="tearDown" finished-at="2023-09-07T11:27:32 PST" duration-ms="363" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- pmTechExAutomation.TestCases.AccountActivationRegression -->
-    </test> <!-- Account Activation - Corporation Business Type -->
+    </test> <!-- Account Activation - Sole Proprietorship Business Type -->
   </suite> <!-- PayMongo Technical Exam Suite -->
 </testng-results>

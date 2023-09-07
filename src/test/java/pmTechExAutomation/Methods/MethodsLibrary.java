@@ -90,12 +90,12 @@ public class MethodsLibrary {
 
         switch(locType.toLowerCase()){
             case "id":
-                element = wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(
-                    driver.findElement(By.id(input)))));
+                element = wait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(
+                    By.id(input))));
                 break;
             case "xpath":
-                element = wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(
-                    driver.findElement(By.xpath(input)))));
+                element = wait.until(ExpectedConditions.refreshed(ExpectedConditions.presenceOfElementLocated(
+                    By.xpath(input))));
                 break;
             default:
                 System.out.println("Identifier [ " + locType + " ] is not valid!");
@@ -106,13 +106,24 @@ public class MethodsLibrary {
     }
 
     /* 
-     * Method to pause the test for a specified duration
+     * Method to wait until a web element is clickable
      */
-    public void testPause(long duration){
-        try {
-            Thread.sleep(duration);
-        } catch (Exception exception) {
-            exception.printStackTrace();
+    public WebElement waitUntilElementClickable(WebDriver driver, WebDriverWait wait, String locType, String input) {
+        WebElement element = null;
+
+        switch (locType.toLowerCase()) {
+            case "id":
+                element = wait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(
+                    driver.findElement(By.id(input)))));
+                break;
+            case "xpath":
+                element = wait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(
+                    driver.findElement(By.xpath(input)))));
+                break;
+            default:
+                break;
         }
+
+        return element;
     }
 }

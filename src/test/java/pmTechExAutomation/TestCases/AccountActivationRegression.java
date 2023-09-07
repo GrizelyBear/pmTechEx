@@ -26,7 +26,7 @@ public class AccountActivationRegression {
     public WebDriver driver = null;
     public BufferedReader fileReader;
     public WebDriverWait wait;
-    public long pageTimeout = 90;
+    public long pageTimeout = 30;
 
     public String testURL = "";
     public String testEmailAddress = "";
@@ -75,7 +75,6 @@ public class AccountActivationRegression {
 
     @Test (dependsOnMethods = {"verifyUserLogin"})
     public void verifyAccountActivationFirstStep() {
-        methods.testPause(15000); // Temporary workaround to wait for the elements to load.
         
         /* Assert that the user has been properly redirected to Step 1 of the Account Activation module. */
         Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
@@ -91,13 +90,12 @@ public class AccountActivationRegression {
         verifyFirstStepRestrictedBusinessesLink();
 
         /* Proceed to the next step. */
-        driver.findElement(By.xpath(accActVars.nextBtnXpath)).click();
+        methods.waitUntilElementClickable(driver, wait, "xpath", accActVars.nextBtnXpath).click();
     }
 
     @Test (dependsOnMethods = {"verifyAccountActivationFirstStep"})
     public void verifyAccountActivationSecondStep() {
-        methods.testPause(15000); // Temporary workaround to wait for the elements to load.
-        
+                
         /* Assert that the user has been properly redirected to Step 2 of the Account Activation module. */
         Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
             accActVars.step2HeaderXpath).isDisplayed());
@@ -144,17 +142,7 @@ public class AccountActivationRegression {
     public void verifyAccountActivationSecondStepSuccessfulSubmit() {
         fillUpValidGeneralInformationForm();
 
-        driver.findElement(By.xpath(accActVars.nextBtnXpath)).click();
-
-        methods.testPause(15000); // Temporary workaround to wait for the elements to load.
-
-        /* Assert that the Roadmap Status of the previous steps are "Completed." */
-        Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "xpath",
-            accActVars.returnStepRoadmapStatusXpath(Step.FIRST)).getText(),
-            StepStatus.COMPLETED.returnStepStatusLabel());
-        Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "xpath",
-            accActVars.returnStepRoadmapStatusXpath(Step.SECOND)).getText(),
-            StepStatus.COMPLETED.returnStepStatusLabel());
+        methods.waitUntilElementClickable(driver, wait, "xpath", accActVars.nextBtnXpath).click();
     }
 
     @Test (dependsOnMethods = {"verifyAccountActivationSecondStepSuccessfulSubmit"})
@@ -169,20 +157,28 @@ public class AccountActivationRegression {
             accActVars.returnStepRoadmapStatusXpath(Step.THIRD)).getText(),
             StepStatus.IN_PROGRESS.returnStepStatusLabel());
 
-        driver.findElement(By.xpath(accActVars.returnStep3BusinessTypeRadioButtonXpath(testBusinessType))).click();
-        driver.findElement(By.xpath(accActVars.nextBtnXpath)).click();
+        /* Assert that the Roadmap Status of the previous steps are "Completed." */
+        Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "xpath",
+            accActVars.returnStepRoadmapStatusXpath(Step.FIRST)).getText(),
+            StepStatus.COMPLETED.returnStepStatusLabel());
+        Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "xpath",
+            accActVars.returnStepRoadmapStatusXpath(Step.SECOND)).getText(),
+            StepStatus.COMPLETED.returnStepStatusLabel());
+
+        methods.waitUntilElementClickable(driver, wait, "xpath",
+            accActVars.returnStep3BusinessTypeRadioButtonXpath(testBusinessType)).click();
+        methods.waitUntilElementClickable(driver, wait, "xpath", accActVars.nextBtnXpath).click();
     }
 
     @Test (dependsOnMethods = {"verifyAccountActivationThirdStepChooseBusinessType"})
     public void verifyAccountActivationThirdStepBusinessFormInitialValues() {
-        methods.testPause(15000); // Temporary workaround to wait for the elements to load.
 
         /* Assert the initial values of the Legal Name. */
-        Assert.assertEquals(
-            driver.findElement(By.id(accActVars.step3FirstNameID)).getAttribute("value"),
+        Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "id",
+            accActVars.step3FirstNameID).getAttribute("value"),
             methods.findJsonStringValue(jsonVars.signUpFirstNamePath));
-        Assert.assertEquals(
-            driver.findElement(By.id(accActVars.step3LastNameID)).getAttribute("value"),
+        Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "id",
+            accActVars.step3LastNameID).getAttribute("value"),
             methods.findJsonStringValue(jsonVars.signUpLastNamePath));
     }
 
@@ -208,20 +204,7 @@ public class AccountActivationRegression {
             fillUpValidCorporationBusinessInformationForm();
         }
 
-        driver.findElement(By.xpath(accActVars.nextBtnXpath)).click();
-
-        methods.testPause(15000); // Temporary workaround to wait for the elements to load.
-
-        /* Assert that the Roadmap Status of the previous steps are "Completed." */
-        Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "xpath",
-            accActVars.returnStepRoadmapStatusXpath(Step.FIRST)).getText(),
-            StepStatus.COMPLETED.returnStepStatusLabel());
-        Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "xpath",
-            accActVars.returnStepRoadmapStatusXpath(Step.SECOND)).getText(),
-            StepStatus.COMPLETED.returnStepStatusLabel());
-        Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "xpath",
-            accActVars.returnStepRoadmapStatusXpath(Step.THIRD)).getText(),
-            StepStatus.COMPLETED.returnStepStatusLabel());
+        methods.waitUntilElementClickable(driver, wait, "xpath", accActVars.nextBtnXpath).click();
     }
 
     @Test (dependsOnMethods = {"verifyAccountActivationThirdStepSuccessfulSubmit"})
@@ -235,6 +218,17 @@ public class AccountActivationRegression {
         Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "xpath",
             accActVars.returnStepRoadmapStatusXpath(Step.FOURTH)).getText(),
             StepStatus.IN_PROGRESS.returnStepStatusLabel());
+
+        /* Assert that the Roadmap Status of the previous steps are "Completed." */
+        Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "xpath",
+            accActVars.returnStepRoadmapStatusXpath(Step.FIRST)).getText(),
+            StepStatus.COMPLETED.returnStepStatusLabel());
+        Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "xpath",
+            accActVars.returnStepRoadmapStatusXpath(Step.SECOND)).getText(),
+            StepStatus.COMPLETED.returnStepStatusLabel());
+        Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "xpath",
+            accActVars.returnStepRoadmapStatusXpath(Step.THIRD)).getText(),
+            StepStatus.COMPLETED.returnStepStatusLabel());
 
         verifyTermsOfUseLink();
         verifyPrivacyPolicyLink();
@@ -253,10 +247,13 @@ public class AccountActivationRegression {
 
     @Test (dependsOnMethods = {"verifyFourthStepStatementOfAcceptanceErrorHandling"})
     public void verifyFourthStepSubmitStatementOfAcceptance() {
-        driver.findElement(By.xpath(accActVars.step4SignatureCanvasXpath)).click();
-        driver.findElement(By.xpath(accActVars.nextBtnXpath)).click();
+        methods.waitUntilElementClickable(driver, wait, "xpath",
+            accActVars.step4SignatureCanvasXpath).click();
+        methods.waitUntilElementClickable(driver, wait, "xpath", accActVars.nextBtnXpath).click();
 
-        methods.testPause(15000); // Temporary workaround to wait for the elements to load.
+        /* Assert that the user is now on the Account Activation Finish page */
+        Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
+            accActVars.goToDashboardBtnXpath).isDisplayed());
 
         /* Assert that the Roadmap Status of all steps are "Completed." */
         Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "xpath",
@@ -271,10 +268,6 @@ public class AccountActivationRegression {
         Assert.assertEquals(methods.waitUntilElementVisible(driver, wait, "xpath",
             accActVars.returnStepRoadmapStatusXpath(Step.FOURTH)).getText(),
             StepStatus.COMPLETED.returnStepStatusLabel());
-
-        /* Assert that the user is now on the Account Activation Finish page */
-        Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
-            accActVars.goToDashboardBtnXpath).isDisplayed());
     }
 
     @AfterClass
@@ -323,12 +316,10 @@ public class AccountActivationRegression {
     public void verifySubmitOfBlankSecondStepForm() {
 
         /* Clear all pre-filled fields. */
-        driver.findElement(By.id(accActVars.step2BusinessStoreNameID)).clear();
-        driver.findElement(By.id(accActVars.step2BusinessHandleID)).clear();
+        methods.waitUntilElementVisible(driver, wait, "id", accActVars.step2BusinessStoreNameID).clear();
+        methods.waitUntilElementVisible(driver, wait, "id", accActVars.step2BusinessHandleID).clear();
 
-        driver.findElement(By.xpath(accActVars.nextBtnXpath)).click();
-
-        methods.testPause(15000); // Temporary workaround to wait for the elements to load.
+        methods.waitUntilElementClickable(driver, wait, "xpath", accActVars.nextBtnXpath).click();
 
         /* Check presence of error messages. */
         checkGeneralInformationAssertionsOfErrorMsgs();
@@ -337,18 +328,17 @@ public class AccountActivationRegression {
     public void verifySubmitOfDefaultBusinessHandleSecondStepForm() {
         
         /* Fill the Business Handle field with the default Business Handle */
-        driver.findElement(By.id(accActVars.step2BusinessHandleID)).sendKeys(defaultBusinessHandle);
+        methods.waitUntilElementVisible(driver, wait, "id", accActVars.step2BusinessHandleID)
+            .sendKeys(defaultBusinessHandle);
 
-        driver.findElement(By.xpath(accActVars.nextBtnXpath)).click();
-
-        methods.testPause(15000); // Temporary workaround to wait for the elements to load.
+        methods.waitUntilElementClickable(driver, wait, "xpath", accActVars.nextBtnXpath).click();
 
         /* Check presence of error messages. */
         Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
             accActVars.returnFieldErrorMessageXpath(ErrorType.DEFAULT_BUSINESS_HANDLE)).isDisplayed());
 
         /* Revert back to blank state */
-        driver.findElement(By.id(accActVars.step2BusinessHandleID)).clear();
+        methods.waitUntilElementVisible(driver, wait, "id", accActVars.step2BusinessHandleID).clear();
     }
 
     public void fillUpValidGeneralInformationForm() {
@@ -395,20 +385,20 @@ public class AccountActivationRegression {
     public void verifySubmitOfBlankThirdStepForm() {
 
         /* Clear all pre-filled fields. */
-        driver.findElement(By.id(accActVars.step3FirstNameID)).clear();
-        driver.findElement(By.id(accActVars.step3LastNameID)).clear();
+        methods.waitUntilElementVisible(driver, wait, "id", accActVars.step3FirstNameID).clear();
+        methods.waitUntilElementVisible(driver, wait, "id", accActVars.step3LastNameID).clear();
 
         if (!testBusinessType.equals("Individual")) {
             if (testBusinessType.equals("Sole proprietorship")) {
-                driver.findElement(By.id(accActVars.step3DTIRegisteredNameID)).clear();
+                methods.waitUntilElementVisible(driver, wait, "id",
+                    accActVars.step3DTIRegisteredNameID).clear();
             } else {
-                driver.findElement(By.id(accActVars.step3BusinessLegalNameID)).clear();
+                methods.waitUntilElementVisible(driver, wait, "id",
+                    accActVars.step3BusinessLegalNameID).clear();
             }
         }
 
-        driver.findElement(By.xpath(accActVars.nextBtnXpath)).click();
-
-        methods.testPause(15000); // Temporary workaround to wait for the elements to load.
+        methods.waitUntilElementClickable(driver, wait, "xpath", accActVars.nextBtnXpath).click();
 
         /* Check presence of error messages. */
         checkBusinessInformationAssertionsOfErrorMsgs();
@@ -416,6 +406,13 @@ public class AccountActivationRegression {
 
     /* Method to fill up Step 3 - Partnership Business Information Form with valid values. */
     public void fillUpValidIndividualBusinessInformationForm() {
+        driver.findElement(By.id(accActVars.step3GovtIdUploadID))
+            .sendKeys(methods.returnFileLocation("sampleImage_1.png", ""));
+        
+        /* Assert that the files have been uploaded properly. */
+        Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
+            accActVars.returnUploadedFileXpath("sampleImage_1.png")).isDisplayed());
+        
         driver.findElement(By.id(accActVars.step3FirstNameID))
             .sendKeys(methods.findJsonStringValue(jsonVars.validIndivBizInfoFirstNamePath));
         driver.findElement(By.id(accActVars.step3LastNameID))
@@ -482,19 +479,21 @@ public class AccountActivationRegression {
             .sendKeys(methods.findJsonStringValue(jsonVars.validIndivBizInfoBankAcctNamePath));
         driver.findElement(By.id(accActVars.step3BankAcctNumID))
             .sendKeys(methods.findJsonStringValue(jsonVars.validIndivBizInfoBankAcctNumPath));
-        
-        driver.findElement(By.id(accActVars.step3GovtIdUploadID))
-            .sendKeys(methods.returnFileLocation("sampleImage_1.png", ""));
-        
-        methods.testPause(10000); // Temporary workaround to wait for the files to be uploaded.
-
-        /* Assert that the files have been uploaded properly. */
-        Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
-            accActVars.returnUploadedFileXpath("sampleImage_1.png")).isDisplayed());
     }
 
     /* Method to fill up Step 3 - Partnership Business Information Form with valid values. */
     public void fillUpValidSoleProprietorshipBusinessInformationForm() {
+        driver.findElement(By.id(accActVars.step3GovtIdUploadID))
+            .sendKeys(methods.returnFileLocation("sampleImage_1.png", ""));
+        driver.findElement(By.id(accActVars.step3DTIRegCertUploadID))
+            .sendKeys(methods.returnFileLocation("sampleImage_2.jpeg", ""));
+
+        /* Assert that the files have been uploaded properly. */
+        Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
+            accActVars.returnUploadedFileXpath("sampleImage_1.png")).isDisplayed());
+        Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
+            accActVars.returnUploadedFileXpath("sampleImage_2.jpeg")).isDisplayed());
+
         driver.findElement(By.id(accActVars.step3FirstNameID))
             .sendKeys(methods.findJsonStringValue(jsonVars.validSolePropBizInfoFirstNamePath));
         driver.findElement(By.id(accActVars.step3LastNameID))
@@ -553,23 +552,25 @@ public class AccountActivationRegression {
             .sendKeys(methods.findJsonStringValue(jsonVars.validSolePropBizInfoBankAcctNamePath));
         driver.findElement(By.id(accActVars.step3BankAcctNumID))
             .sendKeys(methods.findJsonStringValue(jsonVars.validSolePropBizInfoBankAcctNumPath));
-        
+    }
+
+    /* Method to fill up Step 3 - Partnership Business Information Form with valid values. */
+    public void fillUpValidPartnershipBusinessInformationForm() {
         driver.findElement(By.id(accActVars.step3GovtIdUploadID))
             .sendKeys(methods.returnFileLocation("sampleImage_1.png", ""));
-        driver.findElement(By.id(accActVars.step3DTIRegCertUploadID))
+        driver.findElement(By.id(accActVars.step3SECRegCertUploadID))
             .sendKeys(methods.returnFileLocation("sampleImage_2.jpeg", ""));
-
-        methods.testPause(10000); // Temporary workaround to wait for the files to be uploaded.
+        driver.findElement(By.id(accActVars.step3ArticlesOfPartnershipUploadID))
+            .sendKeys(methods.returnFileLocation("sampleImage_3.png", ""));
 
         /* Assert that the files have been uploaded properly. */
         Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
             accActVars.returnUploadedFileXpath("sampleImage_1.png")).isDisplayed());
         Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
             accActVars.returnUploadedFileXpath("sampleImage_2.jpeg")).isDisplayed());
-    }
+        Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
+            accActVars.returnUploadedFileXpath("sampleImage_3.png")).isDisplayed());
 
-    /* Method to fill up Step 3 - Partnership Business Information Form with valid values. */
-    public void fillUpValidPartnershipBusinessInformationForm() {    
         driver.findElement(By.id(accActVars.step3FirstNameID))
             .sendKeys(methods.findJsonStringValue(jsonVars.validPartnerBizInfoFirstNamePath));
         driver.findElement(By.id(accActVars.step3LastNameID))
@@ -612,15 +613,18 @@ public class AccountActivationRegression {
             .sendKeys(methods.findJsonStringValue(jsonVars.validPartnerBizInfoBankAcctNamePath));
         driver.findElement(By.id(accActVars.step3BankAcctNumID))
             .sendKeys(methods.findJsonStringValue(jsonVars.validPartnerBizInfoBankAcctNumPath));
+    }
 
+    /* Method to fill up Step 3 - Corporation Business Information Form with valid values. */
+    public void fillUpValidCorporationBusinessInformationForm() {
         driver.findElement(By.id(accActVars.step3GovtIdUploadID))
             .sendKeys(methods.returnFileLocation("sampleImage_1.png", ""));
         driver.findElement(By.id(accActVars.step3SECRegCertUploadID))
             .sendKeys(methods.returnFileLocation("sampleImage_2.jpeg", ""));
-        driver.findElement(By.id(accActVars.step3ArticlesOfPartnershipUploadID))
+        driver.findElement(By.id(accActVars.step3ByLawsUploadID))
             .sendKeys(methods.returnFileLocation("sampleImage_3.png", ""));
-
-        methods.testPause(10000); // Temporary workaround to wait for the files to be uploaded.
+        driver.findElement(By.id(accActVars.step3ArticlesOfIncorporationUploadID))
+            .sendKeys(methods.returnFileLocation("sampleImage_4.png", ""));
 
         /* Assert that the files have been uploaded properly. */
         Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
@@ -629,10 +633,9 @@ public class AccountActivationRegression {
             accActVars.returnUploadedFileXpath("sampleImage_2.jpeg")).isDisplayed());
         Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
             accActVars.returnUploadedFileXpath("sampleImage_3.png")).isDisplayed());
-    }
+        Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
+            accActVars.returnUploadedFileXpath("sampleImage_4.png")).isDisplayed());
 
-    /* Method to fill up Step 3 - Corporation Business Information Form with valid values. */
-    public void fillUpValidCorporationBusinessInformationForm() {
         driver.findElement(By.id(accActVars.step3FirstNameID))
             .sendKeys(methods.findJsonStringValue(jsonVars.validCorpBizInfoFirstNamePath));
         driver.findElement(By.id(accActVars.step3LastNameID))
@@ -675,27 +678,6 @@ public class AccountActivationRegression {
             .sendKeys(methods.findJsonStringValue(jsonVars.validCorpBizInfoBankAcctNamePath));
         driver.findElement(By.id(accActVars.step3BankAcctNumID))
             .sendKeys(methods.findJsonStringValue(jsonVars.validCorpBizInfoBankAcctNumPath));
-
-        driver.findElement(By.id(accActVars.step3GovtIdUploadID))
-            .sendKeys(methods.returnFileLocation("sampleImage_1.png", ""));
-        driver.findElement(By.id(accActVars.step3SECRegCertUploadID))
-            .sendKeys(methods.returnFileLocation("sampleImage_2.jpeg", ""));
-        driver.findElement(By.id(accActVars.step3ByLawsUploadID))
-            .sendKeys(methods.returnFileLocation("sampleImage_3.png", ""));
-        driver.findElement(By.id(accActVars.step3ArticlesOfIncorporationUploadID))
-            .sendKeys(methods.returnFileLocation("sampleImage_4.png", ""));
-
-        methods.testPause(10000); // Temporary workaround to wait for the files to be uploaded.
-
-        /* Assert that the files have been uploaded properly. */
-        Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
-            accActVars.returnUploadedFileXpath("sampleImage_1.png")).isDisplayed());
-        Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
-            accActVars.returnUploadedFileXpath("sampleImage_2.jpeg")).isDisplayed());
-        Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
-            accActVars.returnUploadedFileXpath("sampleImage_3.png")).isDisplayed());
-        Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",
-            accActVars.returnUploadedFileXpath("sampleImage_4.png")).isDisplayed());
     }
 
     /* Checks error messages on Step 2 - General Information */
@@ -850,9 +832,7 @@ public class AccountActivationRegression {
     }
 
     public void verifySubmitOfBlankFourthStepForm() {
-        driver.findElement(By.xpath(accActVars.nextBtnXpath)).click();
-
-        methods.testPause(15000); // Temporary workaround to wait for the elements to load.
+        methods.waitUntilElementClickable(driver, wait, "xpath", accActVars.nextBtnXpath).click();
 
         /* Check presence of error messages. */
         Assert.assertTrue(methods.waitUntilElementVisible(driver, wait, "xpath",

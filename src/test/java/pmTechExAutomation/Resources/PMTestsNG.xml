@@ -11,31 +11,31 @@
     </classes>
   </test> -->
 
-  <!-- <test name="Account Activation - Sole Proprietorship Business Type">
+  <test name="Account Activation - Sole Proprietorship Business Type">
     <classes>
       <class name="pmTechExAutomation.TestCases.AccountActivationRegression"/>
-      <parameter name="emailAddress" value="grizelybearyl+test3@gmail.com"/>
+      <parameter name="emailAddress" value="grizelybearyl+tester1@gmail.com"/>
       <parameter name="password" value="test_P@ssw0rd!"/>
       <parameter name="businessType" value="Sole proprietorship"/>
     </classes>
-  </test> -->
+  </test>
 
   <!-- <test name="Account Activation - Partnership Business Type">
     <classes>
       <class name="pmTechExAutomation.TestCases.AccountActivationRegression"/>
-      <parameter name="emailAddress" value="grizelybearyl+test4@gmail.com"/>
+      <parameter name="emailAddress" value="grizelybearyl+test8@gmail.com"/>
       <parameter name="password" value="test_P@ssw0rd!"/>
       <parameter name="businessType" value="Partnership"/>
     </classes>
   </test> -->
 
-  <test name="Account Activation - Corporation Business Type">
+  <!-- <test name="Account Activation - Corporation Business Type">
     <classes>
       <class name="pmTechExAutomation.TestCases.AccountActivationRegression"/>
       <parameter name="emailAddress" value="grizelybearyl+tester7@gmail.com"/>
       <parameter name="password" value="test_P@ssw0rd!"/>
       <parameter name="businessType" value="Corporation"/>
     </classes>
-  </test>
+  </test> -->
 
 </suite>
